@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b1a">
+    <title>Starstrike — Space Shooter</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Starstrike home">
+          <span class="brand-icon" aria-hidden="true">✦</span>
+          <span>STAR<span class="brand-accent">STRIKE</span></span>
+        </a>
+        <div class="game-label"><span class="live-dot"></span> ARCADE MODE</div>
+        <button class="sound-button" id="sound-button" type="button" aria-label="Toggle sound" title="Toggle sound">♫</button>
+      </header>
+
+      <section class="game-layout" aria-label="Space shooter game">
+        <div class="game-column">
+          <div class="game-stage">
+            <canvas id="game" width="960" height="600" aria-label="Space shooter game area"></canvas>
+            <div class="game-overlay" id="overlay">
+              <div class="overlay-card">
+                <div class="eyebrow"><span>✦</span> THE GALAXY NEEDS YOU <span>✦</span></div>
+                <h1 id="overlay-title">STAR<span>STRIKE</span></h1>
+                <p class="overlay-copy" id="overlay-copy">Pilot your ship. Blast through the waves.<br>How long can you survive?</p>
+                <button class="start-button" id="start-button" type="button">
+                  <span id="start-label">START GAME</span><span class="button-arrow" aria-hidden="true">→</span>
+                </button>
+                <p class="overlay-hint" id="overlay-hint">PRESS ENTER TO LAUNCH</p>
+              </div>
+            </div>
+            <div class="pause-badge" id="pause-badge" hidden>PAUSED <span>·</span> PRESS P TO RESUME</div>
+          </div>
+
+          <div class="mobile-controls" aria-label="Touch controls">
+            <div class="d-pad">
+              <button class="touch-button up" data-key="ArrowUp" aria-label="Move up">▲</button>
+              <button class="touch-button left" data-key="ArrowLeft" aria-label="Move left">◀</button>
+              <button class="touch-button down" data-key="ArrowDown" aria-label="Move down">▼</button>
+              <button class="touch-button right" data-key="ArrowRight" aria-label="Move right">▶</button>
+            </div>
+            <button class="touch-button fire-button" id="fire-button" aria-label="Fire">FIRE</button>
+          </div>
+
+          <div class="controls-hint">
+            <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <span class="hint-text">MOVE</span></span>
+            <span><kbd>SPACE</kbd> <span class="hint-text">FIRE</span></span>
+            <span><kbd>P</kbd> <span class="hint-text">PAUSE</span></span>
+          </div>
+        </div>
+
+        <aside class="sidebar" aria-label="Game statistics">
+          <div class="stat-card score-card">
+            <div class="stat-label">SCORE</div>
+            <div class="stat-value" id="score">000000</div>
+            <div class="score-progress"><span id="score-progress"></span></div>
+            <div class="score-foot"><span>BEST</span><span id="best-score">000000</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">WAVE</div>
+            <div class="wave-display"><span class="wave-number" id="wave">01</span><span class="wave-caption">INCOMING</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">HULL INTEGRITY</div>
+            <div class="lives" id="lives" aria-label="3 lives"><span>♥</span><span>♥</span><span>♥</span></div>
+          </div>
+          <div class="side-note">
+            <span class="note-star">✧</span>
+            <p>Stay sharp, pilot.<br>The stars are not what<br>they seem.</p>
+          </div>
+          <div class="sidebar-footer">MADE FOR THE COSMOS <span>✦</span></div>
+        </aside>
+      </section>
+      <footer class="page-footer"><span>STARSTRIKE // DEEP SPACE DEFENSE</span><span>© 2084 · EARTH COMMAND</span></footer>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
